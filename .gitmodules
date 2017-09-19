@@ -1,0 +1,3 @@
+[submodule "service/auth/js"]
+	path = service/auth/js
+	url = https://github.com/aarondcohen/ows-auth-service-js.git
