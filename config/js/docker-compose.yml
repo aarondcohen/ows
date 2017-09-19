@@ -1,0 +1,19 @@
+version: "3"
+services:
+  postgres:
+    image: postgres
+    volumes:
+      - "ows-<SERVICE_NAME>-postgres:/var/lib/postgresql/data"
+
+  <SERVICE_NAME>-api:
+    build: .
+    command: yarn start
+    volumes:
+      - .:/ows-<SERVICE_NAME>
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+
+volumes:
+  ows-<SERVICE_NAME>-postgres:
